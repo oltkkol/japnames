@@ -511,7 +511,6 @@ def evaluate_dataset(df_m, df_f, verbose=False):
 
     n = len(key_names)
     corrected_alpha = ALPHA / n
-    corrected_alpha =   0.01
     results = results[ results["p-value"] <= corrected_alpha ] ### EXT TABULKA
     results = results.sort_values(["Odds", "Males", "Females"], ascending=[True, False, True])
     results = results.astype({"Males" : "int", "Females" : "int", "Total" : "int"})
